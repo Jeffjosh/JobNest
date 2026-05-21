@@ -1,0 +1,136 @@
+/* Job Detail page */
+.jobdetail-container {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 36px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
+
+/* Job info */
+.jobdetail-container h1 {
+  font-size: 26px;
+  color: #222;
+  margin-bottom: 6px;
+}
+
+.jobdetail-container h2 {
+  font-size: 17px;
+  color: #555;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.jobdetail-container > p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+.jobdetail-divider {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 24px 0;
+}
+
+/* Apply section */
+.apply-section {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.apply-section h3 {
+  font-size: 17px;
+  color: #222;
+  margin-bottom: 4px;
+}
+
+/* Checkbox row */
+.resume-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #444;
+  cursor: pointer;
+}
+
+.resume-toggle input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #007bff;
+  cursor: pointer;
+}
+
+/* Resume link */
+.resume-link {
+  display: inline-block;
+  font-size: 13px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.resume-link:hover {
+  text-decoration: underline;
+}
+
+/* File input */
+.apply-section input[type="file"] {
+  padding: 8px;
+  border: 1px dashed #bbb;
+  border-radius: 6px;
+  background-color: #fafafa;
+  font-size: 13px;
+  color: #555;
+}
+
+/* Cover letter */
+.apply-section textarea {
+  padding: 12px 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  resize: vertical;
+  min-height: 130px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.apply-section textarea:focus {
+  border-color: #007bff;
+  background-color: #f0f7ff;
+}
+
+/* Apply button */
+.btn-apply {
+  padding: 11px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-apply:hover {
+  background-color: #0056b3;
+}
+
+.btn-apply:active {
+  transform: scale(0.98);
+}
+
+/* Loading state */
+.loading {
+  text-align: center;
+  margin-top: 80px;
+  font-size: 18px;
+  color: #888;
+}

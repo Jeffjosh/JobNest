@@ -1,0 +1,48 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #007bff;
+  padding: 12px 24px;
+}
+
+nav h2 {
+  color: #fff;
+  font-size: 22px;
+}
+
+nav div {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+nav span {
+  color: #fff;
+  font-size: 15px;
+}
+
+nav button {
+  padding: 6px 14px;
+  background-color: #fff;
+  color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+nav button:hover {
+  background-color: #e6e6e6;
+}

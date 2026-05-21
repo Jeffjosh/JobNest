@@ -1,0 +1,129 @@
+/* Profile page */
+.profile-container {
+  max-width: 620px;
+  margin: 40px auto;
+  padding: 36px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
+
+.profile-container h1 {
+  font-size: 24px;
+  margin-bottom: 24px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #eee;
+  color: #222;
+}
+
+/* ── View mode ── */
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.profile-info p {
+  font-size: 15px;
+  color: #444;
+  background-color: #f8f9fa;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: 1px solid #eee;
+}
+
+.profile-info p span {
+  font-weight: 600;
+  color: #222;
+  margin-right: 6px;
+}
+
+.profile-info a {
+  display: inline-block;
+  font-size: 14px;
+  color: #007bff;
+  text-decoration: none;
+  padding: 8px 0;
+}
+
+.profile-info a:hover {
+  text-decoration: underline;
+}
+
+/* ── Edit form ── */
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.profile-form input[type="text"],
+.profile-form input[type="email"] {
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.profile-form input:focus {
+  border-color: #007bff;
+  background-color: #f0f7ff;
+}
+
+.profile-form input[type="file"] {
+  padding: 8px;
+  border: 1px dashed #bbb;
+  border-radius: 6px;
+  background-color: #fafafa;
+  font-size: 13px;
+  color: #555;
+}
+
+.profile-form a {
+  font-size: 13px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.profile-form a:hover {
+  text-decoration: underline;
+}
+
+/* ── Buttons ── */
+.btn-edit-profile,
+.btn-update-profile {
+  margin-top: 6px;
+  padding: 11px;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-update-profile {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.btn-update-profile:hover {
+  background-color: #0056b3;
+}
+
+.btn-update-profile:active {
+  transform: scale(0.98);
+}
+
+.btn-edit-profile {
+  background-color: #f0f0f0;
+  color: #333;
+  border: 1px solid #ccc;
+}
+
+.btn-edit-profile:hover {
+  background-color: #e0e0e0;
+}

@@ -1,0 +1,57 @@
+/* My Applications page */
+.myapps-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px 60px;
+}
+
+.myapps-container h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.myapps-empty {
+  color: #888;
+  font-size: 15px;
+}
+
+.myapps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.app-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.app-card h2 {
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.app-card h3 {
+  font-size: 15px;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.app-card p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.app-status {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: bold;
+  background-color: #e9f0ff;
+  color: #007bff;
+}

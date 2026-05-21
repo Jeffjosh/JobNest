@@ -1,0 +1,67 @@
+/* Register page */
+.register-container {
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 32px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.register-container h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+  text-align: center;
+}
+
+.register-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.register-container input,
+.register-container select {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  outline: none;
+  background-color: #fff;
+}
+
+.register-container input:focus,
+.register-container select:focus {
+  border-color: #007bff;
+}
+
+.register-container button {
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.register-container button:hover {
+  background-color: #0056b3;
+}
+
+.register-container p {
+  margin-top: 16px;
+  font-size: 14px;
+  text-align: center;
+  color: #555;
+}
+
+.register-container p a {
+  color: #007bff;
+  text-decoration: none;
+  margin-left: 4px;
+}
+
+.register-container p a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,76 @@
+/* Edit Job page */
+.editjob-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 32px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.editjob-container h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.editjob-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.editjob-container input,
+.editjob-container textarea {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  outline: none;
+  font-family: Arial, sans-serif;
+}
+
+.editjob-container input:focus,
+.editjob-container textarea:focus {
+  border-color: #007bff;
+}
+
+.editjob-container textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.editjob-form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.btn-update {
+  flex: 1;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.btn-update:hover {
+  background-color: #0056b3;
+}
+
+.btn-cancel {
+  flex: 1;
+  padding: 10px;
+  background-color: #f0f0f0;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.btn-cancel:hover {
+  background-color: #e0e0e0;
+}

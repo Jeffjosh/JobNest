@@ -1,0 +1,54 @@
+/* Create Jobs page */
+.createjob-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 32px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.createjob-container h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.createjob-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.createjob-container input,
+.createjob-container textarea {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  outline: none;
+  font-family: Arial, sans-serif;
+}
+
+.createjob-container input:focus,
+.createjob-container textarea:focus {
+  border-color: #007bff;
+}
+
+.createjob-container textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.createjob-container button {
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.createjob-container button:hover {
+  background-color: #0056b3;
+}
