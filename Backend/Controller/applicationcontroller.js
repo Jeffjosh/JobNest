@@ -21,6 +21,8 @@ export const applyjob=async(req,res)=>{
             return res.status(400).json({message:"you already applied for this job"})
         }
 
+        const user=await User.findById(req.user._id)
+
         const resume=req.file ? `/uploads/${req.file.filename}` : user.resume
 
         const coverletter=req.body.coverletter

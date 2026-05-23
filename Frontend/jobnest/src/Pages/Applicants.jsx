@@ -1,12 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { useParams } from 'react-router-dom'
+import { Navigate, useParams } from 'react-router-dom'
 import './Applicants.css'
 import Navbar from '../Components/Navbar'
+import { useNavigate } from 'react-router-dom'
 
 function Applicants() {
+
     const {id}=useParams()
     const [applications,setapplications]=useState([])
+    const[search,setsearch]=useState("")
+    const[statusfilter,setstatusfilter]=useState("")
+    const navigate=useNavigate()
     const getapplications=async()=>{
       try{
         const user=JSON.parse(localStorage.getItem("user"))
@@ -60,8 +65,37 @@ function Applicants() {
             <p className='applicants-empty'>No applicants found.</p>
 
           ):(
+            <div>
+              <div className='applicants-filters'>
+                <input 
+                type="text" 
+                placeholder='search by name or skill'
+                value={search}
+                onChange={(e)=>setsearch(e.target.value)}
+                />
+                <select 
+                value={statusfilter}
+                onChange={(e)=>setstatusfilter(e.target.value)}
+                >
+                  <option value="">All Status</option>
+                  <option value="applied">Applied</option>
+                  <option value="shortlisted">Shortlisted</option>
+                  <option value="rejected">Rejected</option>
+                </select>
+              </div>
+            
             <div className='applicants-list'>
-              {applications.map((app)=>(
+              {
+                applications.filter((app)=>{
+
+                  const matchesearch=app.user.name.toLowerCase().includes(search.toLowerCase()) ||
+                  (app.user.skills && app.user.skills.join("").toLowerCase().includes(search.toLowerCase()))
+
+                  const matchesstatus=statusfilter==="" || app.status===statusfilter
+
+                  return matchesearch && matchesstatus
+                }).map((app)=>(
+              
               <div className='applicant-card' key={app._id}>
                 <h2>{app.user.name}</h2>
                 <h3>{app.user.email}</h3>
@@ -69,7 +103,7 @@ function Applicants() {
                 <p>Experience:{app.user.experience}</p>
                 <p>Skills:{app.user.skills}</p>
                 <p>Status:{app.status}</p>
-                <a href={`${import.meta.env.VITE_URL}${app.resume}`}
+                <a href={`${import.meta.env.VITE_API_URL.replace("/api","")}${app.user.resume}`}
                 target="_blank"
                 rel="noreferrer">
                   View Resume
@@ -78,8 +112,12 @@ function Applicants() {
                   <button className='btn-shortlist' onClick={()=>updatestatus(app._id,"shortlisted")}>Shortlisted</button>
                   <button className='btn-reject' onClick={()=>updatestatus(app._id,"rejected")}>Reject</button>
                 </div>
+                {/* <button onClick={()=>navigate(`/messages/${app.user._id}`)}>
+                  Message
+                </button> */}
               </div>
             ))}
+            </div>
             </div>
           )
         }

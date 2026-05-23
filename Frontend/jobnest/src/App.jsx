@@ -11,6 +11,7 @@ import Applicants from './Pages/Applicants';
 import Editjob from './Pages/Editjob';
 import Protectroute from './Components/Protectroute';
 import Profile from './Pages/Profile';
+import Message from './Pages/Message';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
     <Route path='/applications/:id' element={<Protectroute role="recruiter" ><Applicants/></Protectroute>}/>
     <Route path='/editjob/:id' element={<Protectroute role="recruiter" ><Editjob/></Protectroute>}/>
     <Route path='/profile' element={<Protectroute role="user" ><Profile/></Protectroute>}/>
+    <Route path='/messages/:id' element={<Message/>}/>
     </Routes>
   </Router>
   )

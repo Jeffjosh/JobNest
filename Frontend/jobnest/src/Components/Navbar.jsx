@@ -34,7 +34,10 @@ function Navbar() {
                 <Link to="/createjob">Create Job</Link>
                 </>
               )}
+              
               <span>Welcome,{user.user.name}</span>
+              {/* <Link onClick={()=>navigate(`/messages/${app.user._id}`)}>Message</Link> */}
+
 
               <button onClick={handlelogout}>Logout</button>
               </>

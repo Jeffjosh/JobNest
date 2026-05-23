@@ -6,6 +6,7 @@ import authRoutes from './Routes/userroutes.js';
 import jobroutes from './Routes/jobroutes.js';
 import applicationroutes from './Routes/applicationroutes.js';
 import path from 'path';
+import messageroutes from "./Routes/messageroutes.js"
 
 dotenv.config()
 
@@ -17,6 +18,7 @@ app.use("/api/users",authRoutes)
 app.use("/api/jobs",jobroutes)
 app.use("/api/applications",applicationroutes)
 app.use("/uploads",express.static("uploads"))
+app.use("/api/messages",messageroutes)
 
 mongoose.connect(process.env.MONGODB_URL)
 .then(()=>console.log("mongoDB connected"))
