@@ -1,7 +1,7 @@
 import express from 'express';
 import { applyjob,getapplications,updateapplicationstatus,getmyapplications } from '../Controller/applicationcontroller.js';
 import { protect,authorizeroles } from '../Middleware/authmiddleware.js';
-import upload from '../Middleware/uploadmiddleware.js';
+import upload from '../Middleware/temp.js';
 
 const router = express.Router()
 
