@@ -2,6 +2,11 @@ import Job from "../Models/job.js";
 
 export const createjob=async(req,res)=>{
     try{
+
+        if(req.user.role === "recruiter" && !req.user.isApproved){
+            return res.status(403).json({message:"Waiting for admin approval"})
+        }
+
         const {title,description,company,location,salary}=req.body
 
         const job=await Job.create({
@@ -21,7 +26,7 @@ export const createjob=async(req,res)=>{
 
 export const getjobs=async(req,res)=>{
     try{
-        const jobs=await Job.find().populate("createdBy","name email")
+        const jobs=await Job.find().sort({createdAt:-1}).populate("createdBy","name email")
 
         res.status(200).json({message:"jobs fetched successfully", jobs})
 

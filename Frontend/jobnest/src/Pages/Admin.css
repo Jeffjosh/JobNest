@@ -1,0 +1,205 @@
+/* ===== Page ===== */
+
+.admin-page {
+  min-height: 100vh;
+  background: #f4f7fb;
+  padding: 40px 20px;
+}
+
+/* ===== Container ===== */
+
+.admin-container {
+  width: 90%;
+  max-width: 1400px;
+  margin: auto;
+}
+
+/* ===== Header ===== */
+
+.admin-header {
+  margin-bottom: 40px;
+}
+
+.admin-header h1 {
+  margin: 0;
+  font-size: 42px;
+  color: #0f172a;
+}
+
+.admin-header p {
+  margin-top: 10px;
+  color: #64748b;
+  font-size: 16px;
+}
+
+/* ===== Section ===== */
+
+.admin-section {
+  margin-bottom: 50px;
+}
+
+/* ===== Section Header ===== */
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 25px;
+}
+
+.section-header h2 {
+  margin: 0;
+  font-size: 28px;
+  color: #0f172a;
+}
+
+.section-header span {
+  background: #dbeafe;
+  color: #1d4ed8;
+
+  padding: 8px 14px;
+  border-radius: 999px;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* ===== Empty ===== */
+
+.admin-empty {
+  background: white;
+  padding: 50px 30px;
+
+  border-radius: 24px;
+  text-align: center;
+
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.05);
+}
+
+.admin-empty h3 {
+  margin-bottom: 10px;
+  color: #0f172a;
+}
+
+.admin-empty p {
+  color: #64748b;
+}
+
+/* ===== Grid ===== */
+
+.admin-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 25px;
+}
+
+/* ===== Card ===== */
+
+.admin-card {
+  background: white;
+
+  padding: 28px;
+
+  border-radius: 24px;
+  border: 1px solid #e2e8f0;
+
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.05);
+
+  transition: 0.3s;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.admin-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 35px rgba(15, 23, 42, 0.08);
+}
+
+/* ===== Info ===== */
+
+.admin-card-info h3 {
+  margin: 0;
+  font-size: 24px;
+  color: #0f172a;
+}
+
+.admin-card-info p {
+  margin-top: 14px;
+  color: #475569;
+  line-height: 1.6;
+}
+
+/* ===== Links ===== */
+
+.admin-card-info a {
+  margin-left: 6px;
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.admin-card-info a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Buttons ===== */
+
+.btn-approve,
+.btn-delete {
+  margin-top: 28px;
+
+  height: 52px;
+
+  border: none;
+  border-radius: 14px;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* ===== Approve ===== */
+
+.btn-approve {
+  background: #16a34a;
+  color: white;
+}
+
+.btn-approve:hover {
+  background: #15803d;
+}
+
+/* ===== Delete ===== */
+
+.btn-delete {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.btn-delete:hover {
+  background: #fecaca;
+}
+
+/* ===== Responsive ===== */
+
+@media (max-width: 768px) {
+
+  .admin-header h1 {
+    font-size: 34px;
+  }
+
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .admin-grid {
+    grid-template-columns: 1fr;
+  }
+
+}

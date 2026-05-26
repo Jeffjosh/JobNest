@@ -30,7 +30,10 @@ function Login() {
             localStorage.setItem("user",JSON.stringify(res.data))
 
             alert("Login successful")
-            if(res.data.user.role==="recruiter"){
+            if(res.data.user.role==="admin"){
+              navigate("/admin")
+            }
+            else if(res.data.user.role==="recruiter"){
               console.log(res.data.user.role)
               navigate("/recruiterdashboard")
             }else{
@@ -46,18 +49,51 @@ function Login() {
 
 
   return (
+    <div className='login-page'>
+
     <div className='login-container'>
-      <h2>User Login</h2>
+
+      <div className='login-header'>
+        <h2>Welcome Back</h2>
+        <p>Login to continue your job search journey.</p>
+      </div>
+
       <form onSubmit={handlesubmit}>
-        <input type="text" name="email" placeholder='Email' onChange={handlechange}/>
-        <input type="password" name='password' placeholder='Password' onChange={handlechange}/>
-        <button type='submit'>Login</button>
+
+        <div className='input-group'>
+          <label>Email</label>
+          <input
+            type="text"
+            name="email"
+            placeholder='Enter your email'
+            onChange={handlechange}
+          />
+        </div>
+
+        <div className='input-group'>
+          <label>Password</label>
+          <input
+            type="password"
+            name='password'
+            placeholder='Enter your password'
+            onChange={handlechange}
+          />
+        </div>
+
+        <button type='submit'>
+          Login
+        </button>
+
       </form>
-      <p>
-        Dont have an account?
-        <Link to={"/register"}>Register</Link>
+
+      <p className='register-link'>
+        Don't have an account?
+        <Link to={"/register"}> Register</Link>
       </p>
+
     </div>
+
+  </div>
   )
 }
 

@@ -41,7 +41,7 @@ function Home() {
 
   return (
     <div>
-      <Navbar />
+      
       <div className='home-hero'>
         <h1>Explore Opportunities</h1>
       <p>Find The Perfect Role For You</p>
@@ -64,15 +64,27 @@ function Home() {
       <div className='jobs-container'>
         {filterjobs.map((job)=>(
         <div key={job._id} className='job-card'>
-          <h2>{job.title}</h2>
+          <div className='job-top'>
+            <h2>{job.title}</h2>
           <h3>{job.company}</h3>
+          </div>
           <p>{job.description}</p>
-          <p>Location:{job.location}</p>
+          <div className='job-info'>
+            <p>Location:{job.location}</p>
           <p>Salary:{job.salary}</p>
-          <Link to={`/jobs/${job._id}`}>
-            <button>View Details</button>
-          </Link>
+          </div>
+          <button
+          onClick={()=>{
+            const user=JSON.parse(localStorage.getItem("user"))
 
+            if(!user){
+              navigate("/login")
+            }else{
+              navigate(`/jobs/${job._id}`)
+            }
+          }}>
+            View Details
+          </button>
         </div>
       ))}
       </div>

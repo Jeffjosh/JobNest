@@ -1,136 +1,259 @@
-/* Job Detail page */
+/* ===== Page ===== */
+
+.jobdetail-page {
+  min-height: 100vh;
+  background: #f4f7fb;
+  padding: 40px 20px;
+}
+
+/* ===== Layout ===== */
+
 .jobdetail-container {
-  max-width: 700px;
-  margin: 40px auto;
-  padding: 36px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  width: 90%;
+  max-width: 1300px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
 }
 
-/* Job info */
-.jobdetail-container h1 {
-  font-size: 26px;
-  color: #222;
-  margin-bottom: 6px;
+/* ===== Left Side ===== */
+
+.jobdetail-content {
+  background: white;
+  padding: 35px;
+  border-radius: 24px;
+
+  border: 1px solid #e2e8f0;
+
+  box-shadow: 0 10px 35px rgba(15, 23, 42, 0.05);
 }
 
-.jobdetail-container h2 {
-  font-size: 17px;
-  color: #555;
-  font-weight: 500;
-  margin-bottom: 20px;
+/* ===== Header ===== */
+
+.jobdetail-header h1 {
+  margin-top: 18px;
+  margin-bottom: 10px;
+
+  font-size: 42px;
+  color: #0f172a;
 }
 
-.jobdetail-container > p {
-  font-size: 14px;
-  color: #555;
-  margin-bottom: 8px;
-  line-height: 1.6;
+.jobdetail-header h2 {
+  margin: 0;
+  color: #2563eb;
+  font-size: 22px;
 }
 
-.jobdetail-divider {
-  border: none;
-  border-top: 1px solid #eee;
-  margin: 24px 0;
+/* ===== Badge ===== */
+
+.job-badge {
+  background: #dcfce7;
+  color: #15803d;
+
+  padding: 8px 14px;
+  border-radius: 999px;
+
+  font-size: 13px;
+  font-weight: 600;
 }
 
-/* Apply section */
+/* ===== Meta ===== */
+
+.job-meta {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+
+  margin-top: 30px;
+}
+
+.meta-card {
+  background: #f8fafc;
+  padding: 18px;
+  border-radius: 16px;
+}
+
+.meta-card span {
+  font-size: 13px;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+}
+
+.meta-card p {
+  margin-top: 8px;
+  font-size: 16px;
+  color: #0f172a;
+}
+
+/* ===== Description ===== */
+
+.job-description {
+  margin-top: 35px;
+}
+
+.job-description h3 {
+  margin-bottom: 15px;
+  color: #0f172a;
+}
+
+.job-description p {
+  color: #475569;
+  line-height: 1.8;
+}
+
+/* ===== Apply Section ===== */
+
 .apply-section {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
+  background: white;
+
+  padding: 30px;
+
+  border-radius: 24px;
+
+  border: 1px solid #e2e8f0;
+
+  box-shadow: 0 10px 35px rgba(15, 23, 42, 0.05);
+
+  height: fit-content;
+
+  position: sticky;
+  top: 100px;
 }
+
+/* ===== Apply Header ===== */
 
 .apply-section h3 {
-  font-size: 17px;
-  color: #222;
-  margin-bottom: 4px;
+  margin-top: 0;
+  margin-bottom: 25px;
+
+  font-size: 24px;
+  color: #0f172a;
 }
 
-/* Checkbox row */
+/* ===== Resume Toggle ===== */
+
 .resume-toggle {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 14px;
-  color: #444;
-  cursor: pointer;
+  gap: 10px;
+
+  font-size: 15px;
+  color: #334155;
+
+  margin-bottom: 18px;
 }
 
-.resume-toggle input[type="checkbox"] {
-  width: 16px;
-  height: 16px;
-  accent-color: #007bff;
-  cursor: pointer;
-}
+/* ===== Resume Link ===== */
 
-/* Resume link */
 .resume-link {
   display: inline-block;
-  font-size: 13px;
-  color: #007bff;
+
+  margin-bottom: 20px;
+
   text-decoration: none;
+
+  color: #2563eb;
+  font-weight: 600;
 }
 
 .resume-link:hover {
   text-decoration: underline;
 }
 
-/* File input */
-.apply-section input[type="file"] {
-  padding: 8px;
-  border: 1px dashed #bbb;
-  border-radius: 6px;
-  background-color: #fafafa;
-  font-size: 13px;
-  color: #555;
+/* ===== Upload ===== */
+
+.file-upload input {
+  width: 100%;
+  margin-bottom: 20px;
 }
 
-/* Cover letter */
+/* ===== Textarea ===== */
+
 .apply-section textarea {
-  padding: 12px 14px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 14px;
-  font-family: Arial, sans-serif;
+  width: 100%;
+  min-height: 160px;
+
+  padding: 16px;
+
+  border: 1px solid #dbe1e8;
+  border-radius: 14px;
+
+  font-size: 15px;
+
   resize: vertical;
-  min-height: 130px;
+
   outline: none;
-  transition: border-color 0.2s;
+
+  transition: 0.3s;
+
+  box-sizing: border-box;
 }
 
 .apply-section textarea:focus {
-  border-color: #007bff;
-  background-color: #f0f7ff;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
 }
 
-/* Apply button */
+/* ===== Button ===== */
+
 .btn-apply {
-  padding: 11px;
-  background-color: #007bff;
-  color: #fff;
+  width: 100%;
+  height: 54px;
+
+  margin-top: 20px;
+
   border: none;
-  border-radius: 6px;
-  font-size: 15px;
+  border-radius: 14px;
+
+  background: #2563eb;
+  color: white;
+
+  font-size: 16px;
   font-weight: 600;
+
   cursor: pointer;
-  transition: background-color 0.2s, transform 0.1s;
+  transition: 0.3s;
 }
 
 .btn-apply:hover {
-  background-color: #0056b3;
+  background: #1d4ed8;
 }
 
-.btn-apply:active {
-  transform: scale(0.98);
+.btn-apply:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
 }
 
-/* Loading state */
-.loading {
-  text-align: center;
-  margin-top: 80px;
-  font-size: 18px;
-  color: #888;
+/* ===== Responsive ===== */
+
+@media (max-width: 992px) {
+
+  .jobdetail-container {
+    grid-template-columns: 1fr;
+  }
+
+  .apply-section {
+    position: static;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .jobdetail-header h1 {
+    font-size: 34px;
+  }
+
+  .job-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .jobdetail-content,
+  .apply-section {
+    padding: 25px;
+  }
+
 }

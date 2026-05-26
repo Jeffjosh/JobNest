@@ -119,63 +119,119 @@ function Jobdetail() {
   
   return (
     
-    <div >
-        <Navbar />
-        <div className='jobdetail-container'>
-            <h1>{job.title}</h1>
-            <h2>{job.company}</h2>
-            <p>{job.description}</p>
-            <p>Location: {job.location}</p>
-            <p>Salary: {job.salary}</p>
-            <hr className='jobdetail-divider' />
-            <div className='apply-section'>
-                <h3>Apply for this job</h3>
-             <label className='resume-toggle' >
-                <input 
-                type="checkbox"
-                checked={useprofileresume}
-                onChange={()=>setuseprofileresume(!useprofileresume)} />
-                Use current resume
-            </label>
-            {
-                useprofileresume && profile?.resume && (
-                    <a className='resume-link' href={`${import.meta.env.VITE_API_URL.replace("/api","")}${profile.resume}`}
-                    target="_blank"
-                    rel='noreferrer'
-                    >
-                        View Resume
-                        </a>
-                )
-            }
-            {
-                !useprofileresume && (
-                    <input 
-                    type="file"
-                    accept='.pdf'
-                    onChange={(e)=>setresume(e.target.files[0])} />
-                )
-            }
-            <textarea 
-                placeholder='Write Your Coverletter'
-                value={coverletter}
-                onChange={(e)=>setcoverletter(e.target.value)}></textarea>
-            <button 
-            className="btn-apply" 
-            onClick={handlapply}
-            disabled={alreadyapplied}
-            >
-                {
-                    alreadyapplied
-                    ? "Already Applied"
-                    : "Apply Now"
-                }
-             
-             
-                </button>
-            </div>
+     <div className='jobdetail-page'>
+
+    <div className='jobdetail-container'>
+
+      {/* ===== Left Side ===== */}
+
+      <div className='jobdetail-content'>
+
+        <div className='jobdetail-header'>
+
+          <span className='job-badge'>
+            Open Position
+          </span>
+
+          <h1>{job.title}</h1>
+
+          <h2>{job.company}</h2>
+
         </div>
-      
+
+        <div className='job-meta'>
+
+          <div className='meta-card'>
+            <span>Location</span>
+            <p>{job.location}</p>
+          </div>
+
+          <div className='meta-card'>
+            <span>Salary</span>
+            <p>{job.salary}</p>
+          </div>
+
+        </div>
+
+        <div className='job-description'>
+
+          <h3>Job Description</h3>
+
+          <p>{job.description}</p>
+
+        </div>
+
+      </div>
+
+      {/* ===== Right Side ===== */}
+
+      <div className='apply-section'>
+
+        <h3>Apply for this job</h3>
+
+        <label className='resume-toggle'>
+
+          <input
+            type="checkbox"
+            checked={useprofileresume}
+            onChange={() => setuseprofileresume(!useprofileresume)}
+          />
+
+          Use current resume
+
+        </label>
+
+        {useprofileresume && profile?.resume && (
+
+          <a
+            className='resume-link'
+            href={`${import.meta.env.VITE_API_URL.replace("/api", "")}${profile.resume}`}
+            target="_blank"
+            rel='noreferrer'
+          >
+            View Resume
+          </a>
+
+        )}
+
+        {!useprofileresume && (
+
+          <div className='file-upload'>
+
+            <input
+              type="file"
+              accept='.pdf'
+              onChange={(e) => setresume(e.target.files[0])}
+            />
+
+          </div>
+
+        )}
+
+        <textarea
+          placeholder='Write your cover letter...'
+          value={coverletter}
+          onChange={(e) => setcoverletter(e.target.value)}
+        />
+
+        <button
+          className="btn-apply"
+          onClick={handlapply}
+          disabled={alreadyapplied}
+        >
+
+          {alreadyapplied
+            ? "Already Applied"
+            : "Apply Now"
+          }
+
+        </button>
+
+      </div>
+
     </div>
+
+  </div>
   )
 }
 

@@ -9,12 +9,12 @@ function Navbar() {
 
   const handlelogout=()=>{
     localStorage.removeItem("user")
-    navigate("/login")
+    navigate("/")
   }
   return (
     <nav>
-        <h2>Jobnest</h2>
-        <div>
+        <h2 >Jobnest</h2>
+        <div className='nav-links'>
             <Link to="/">Home</Link>
             {!user ?(
               <>

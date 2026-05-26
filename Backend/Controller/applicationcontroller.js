@@ -1,6 +1,7 @@
 import Application from "../Models/application.js";
 import Job from "../Models/job.js";
 import User from "../Models/user.js";
+import sendmail from "../Utils/sendmail.js";
 
 export const applyjob=async(req,res)=>{
     try{
@@ -87,5 +88,62 @@ export const getmyapplications=async(req,res)=>{
         res.status(200).json({message:"my applications fetched successfully", applications})
     }catch(err){
         res.status(500).json({message:"Server error"})
+    }
+}
+
+export  const shortlistaplication=async(req,res)=>{
+    try{
+        const application=await Application.findById(req.params.id).populate("user","name email")
+
+        application.status="shortlisted"
+
+        await application.save()
+        console.log("Shortlisted mail sending");
+        
+
+        await sendmail(application.user.email,
+            "Application Shortlisted",
+            `Hello ${application.user.name},
+            
+            Congratulation you have been shortlisted for the next round.
+
+            Thnak you.`
+        )
+        res.status(200).json({message:"Candidate Shortlisted"})
+    }catch(err){
+        console.log(err);
+        
+        res.status(500).json({message:err.message})
+    }
+}
+
+export const rejectapplication=async(req,res)=>{
+    try{
+        console.log("resject route hit");
+        
+        const application=await Application.findById(req.params.id).populate("user","name email")
+
+        application.status="rejected"
+
+        await application.save()
+        console.log("rejected mail sending");
+        
+
+        await sendmail(application.user.email,
+            "Application Rejected",
+            `Hello ${application.user.name},
+            
+            We apprecate your interest,but your application was not selected.
+            
+            Thank you for applying.`
+
+        )
+        console.log("reject mail sent");
+        
+        res.status(200).json({message:"Candidate Rejected"})
+    }catch(err){
+        console.log(err);
+        
+        res.status(500).json({message:err.message})
     }
 }

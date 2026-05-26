@@ -1,67 +1,138 @@
-/* Register page */
+/* ===== Page ===== */
+
+.register-page {
+  min-height: 100vh;
+  background: linear-gradient(to right, #eff6ff, #f8fafc);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 20px;
+}
+
+/* ===== Container ===== */
+
 .register-container {
-  max-width: 400px;
-  margin: 80px auto;
-  padding: 32px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  width: 100%;
+  max-width: 500px;
+  background: white;
+  padding: 40px;
+  border-radius: 22px;
+  box-shadow: 0 10px 35px rgba(15, 23, 42, 0.08);
 }
 
-.register-container h2 {
-  margin-bottom: 20px;
-  font-size: 22px;
+/* ===== Header ===== */
+
+.register-header {
   text-align: center;
+  margin-bottom: 30px;
 }
 
-.register-container form {
+.register-header h2 {
+  margin: 0;
+  font-size: 34px;
+  color: #0f172a;
+}
+
+.register-header p {
+  margin-top: 10px;
+  color: #64748b;
+  font-size: 15px;
+}
+
+/* ===== Form ===== */
+
+form {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 20px;
 }
 
-.register-container input,
-.register-container select {
-  padding: 10px 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+/* ===== Input Group ===== */
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  margin-bottom: 8px;
   font-size: 14px;
-  outline: none;
-  background-color: #fff;
+  font-weight: 600;
+  color: #334155;
 }
 
-.register-container input:focus,
-.register-container select:focus {
-  border-color: #007bff;
-}
-
-.register-container button {
-  padding: 10px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
+.input-group input,
+.input-group select {
+  padding: 14px 16px;
+  border: 1px solid #dbe1e8;
+  border-radius: 12px;
   font-size: 15px;
+  outline: none;
+  transition: 0.3s;
+  background: white;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+/* ===== Recruiter Fields ===== */
+
+.recruiter-fields {
+  background: #f8fafc;
+  padding: 20px;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+}
+
+/* ===== Button ===== */
+
+form button {
+  margin-top: 10px;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: #2563eb;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
   cursor: pointer;
+  transition: 0.3s;
 }
 
-.register-container button:hover {
-  background-color: #0056b3;
+form button:hover {
+  background: #1d4ed8;
 }
 
-.register-container p {
-  margin-top: 16px;
-  font-size: 14px;
+/* ===== Login Link ===== */
+
+.login-link {
   text-align: center;
-  color: #555;
+  margin-top: 25px;
+  color: #64748b;
+  font-size: 15px;
 }
 
-.register-container p a {
-  color: #007bff;
+.login-link a {
+  color: #2563eb;
   text-decoration: none;
-  margin-left: 4px;
+  font-weight: 600;
 }
 
-.register-container p a:hover {
+.login-link a:hover {
   text-decoration: underline;
+}
+
+/* ===== Responsive ===== */
+
+@media (max-width: 500px) {
+  .register-container {
+    padding: 30px 22px;
+  }
+
+  .register-header h2 {
+    font-size: 28px;
+  }
 }

@@ -1,98 +1,247 @@
-/* Recruiter Dashboard */
-.dashboard-container {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 0 20px 60px;
+/* ===== Page ===== */
+
+.dashboard-page {
+  min-height: 100vh;
+  background: #f4f7fb;
+  padding: 40px 20px;
 }
 
-.dashboard-container h1 {
-  font-size: 24px;
-  margin-bottom: 20px;
+/* ===== Container ===== */
+
+.dashboard-container {
+  width: 90%;
+  max-width: 1300px;
+  margin: auto;
 }
+
+/* ===== Header ===== */
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 35px;
+}
+
+.dashboard-header h1 {
+  margin: 0;
+  font-size: 40px;
+  color: #0f172a;
+}
+
+.dashboard-header p {
+  margin-top: 10px;
+  color: #64748b;
+}
+
+/* ===== Create Job Button ===== */
+
+.btn-create-job,
+.btn-empty-create {
+  text-decoration: none;
+  background: #2563eb;
+  color: white;
+  padding: 14px 20px;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-create-job:hover,
+.btn-empty-create:hover {
+  background: #1d4ed8;
+}
+
+/* ===== Empty ===== */
 
 .dashboard-empty {
-  color: #888;
-  font-size: 15px;
+  background: white;
+  padding: 60px 30px;
+  border-radius: 24px;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.05);
 }
+
+.dashboard-empty h3 {
+  margin-bottom: 10px;
+  color: #0f172a;
+}
+
+.dashboard-empty p {
+  margin-bottom: 25px;
+  color: #64748b;
+}
+
+/* ===== Grid ===== */
 
 .dashboard-list {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 25px;
 }
+
+/* ===== Card ===== */
 
 .dashboard-card {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 20px;
+  background: white;
+  padding: 28px;
+  border-radius: 24px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.05);
+  transition: 0.3s;
 }
 
-.dashboard-card h2 {
-  font-size: 18px;
-  margin-bottom: 4px;
+.dashboard-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 35px rgba(15, 23, 42, 0.08);
 }
 
-.dashboard-card h3 {
-  font-size: 15px;
-  color: #555;
+/* ===== Card Top ===== */
+
+.dashboard-card-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.dashboard-card-top h2 {
+  margin: 0;
+  font-size: 26px;
+  color: #0f172a;
+}
+
+.dashboard-card-top h3 {
+  margin-top: 10px;
+  color: #2563eb;
+  font-size: 17px;
+}
+
+/* ===== Badge ===== */
+
+.job-badge {
+  background: #dcfce7;
+  color: #15803d;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  height: fit-content;
+}
+
+/* ===== Description ===== */
+
+.job-description {
+  margin-top: 20px;
+  color: #475569;
+  line-height: 1.7;
+}
+
+/* ===== Details ===== */
+
+.job-details {
+  margin-top: 20px;
+}
+
+.job-details p {
   margin-bottom: 10px;
+  color: #475569;
 }
 
-.dashboard-card p {
-  font-size: 14px;
-  color: #666;
-  margin-bottom: 4px;
-}
+/* ===== Actions ===== */
 
-/* Card actions row */
 .dashboard-card-actions {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+/* ===== Buttons ===== */
+
+.dashboard-card-actions a,
+.dashboard-card-actions button {
+  height: 52px;
+
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-top: 14px;
-  flex-wrap: wrap;
-}
+  justify-content: center;
 
-.dashboard-card-actions a {
-  padding: 7px 14px;
-  border-radius: 4px;
-  font-size: 13px;
+  padding: 0 16px;
+
+  border: none;
+  border-radius: 12px;
+
   text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: 0.3s;
+
+  white-space: nowrap;
+
+  box-sizing: border-box;
 }
 
-/* View Applications link */
+/* ===== View ===== */
+
 .btn-view-apps {
-  background-color: #007bff;
-  color: #fff;
+  background: #2563eb;
+  color: white;
 }
 
 .btn-view-apps:hover {
-  background-color: #0056b3;
+  background: #1d4ed8;
 }
 
-/* Edit link */
+/* ===== Edit ===== */
+
 .btn-edit {
-  background-color: #f0f0f0;
-  color: #333;
-  border: 1px solid #ccc;
+  background: #f1f5f9;
+  color: #0f172a;
+  text-align: center;
 }
 
 .btn-edit:hover {
-  background-color: #e0e0e0;
+  background: #e2e8f0;
 }
 
-/* Delete button */
+/* ===== Delete ===== */
+
 .btn-delete {
-  padding: 7px 14px;
-  background-color: #dc3545;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  font-size: 13px;
-  cursor: pointer;
+  background: #fee2e2;
+  color: #b91c1c;
 }
 
 .btn-delete:hover {
-  background-color: #a71d2a;
+  background: #fecaca;
+}
+
+/* ===== Responsive ===== */
+
+@media (max-width: 768px) {
+
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dashboard-header h1 {
+    font-size: 32px;
+  }
+
+  .dashboard-list {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-card-top {
+    flex-direction: column;
+  }
+
+  .dashboard-card-actions {
+    flex-direction: column;
+  }
+
 }

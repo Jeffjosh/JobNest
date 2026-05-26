@@ -1,57 +1,155 @@
-/* My Applications page */
-.myapps-container {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 0 20px 60px;
+/* ===== Page ===== */
+
+.myapps-page {
+  min-height: 100vh;
+  background: #f4f7fb;
+  padding: 40px 20px;
 }
 
-.myapps-container h1 {
-  font-size: 24px;
-  margin-bottom: 20px;
+/* ===== Container ===== */
+
+.myapps-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
 }
+
+/* ===== Header ===== */
+
+.myapps-header {
+  margin-bottom: 35px;
+}
+
+.myapps-header h1 {
+  margin: 0;
+  font-size: 40px;
+  color: #0f172a;
+}
+
+.myapps-header p {
+  margin-top: 10px;
+  color: #64748b;
+  font-size: 16px;
+}
+
+/* ===== Empty State ===== */
 
 .myapps-empty {
-  color: #888;
-  font-size: 15px;
+  background: white;
+  padding: 50px 30px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
 }
 
-.myapps-list {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
+.myapps-empty h3 {
+  margin-bottom: 10px;
+  color: #0f172a;
 }
+
+.myapps-empty p {
+  color: #64748b;
+}
+
+/* ===== Grid ===== */
+
+.applications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+}
+
+/* ===== Card ===== */
 
 .app-card {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 20px;
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.05);
+  transition: 0.3s;
 }
 
-.app-card h2 {
-  font-size: 18px;
-  margin-bottom: 4px;
+.app-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
 }
+
+/* ===== Top ===== */
+
+.app-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.app-top h2 {
+  margin: 0;
+  font-size: 24px;
+  color: #0f172a;
+}
+
+/* ===== Company ===== */
 
 .app-card h3 {
-  font-size: 15px;
-  color: #555;
-  margin-bottom: 8px;
+  margin-top: 10px;
+  color: #2563eb;
+  font-size: 17px;
 }
 
-.app-card p {
-  font-size: 14px;
-  color: #666;
-  margin-bottom: 4px;
+/* ===== Details ===== */
+
+.app-details {
+  margin-top: 20px;
 }
 
-.app-status {
-  display: inline-block;
-  margin-top: 8px;
-  padding: 4px 10px;
-  border-radius: 4px;
+.app-details p {
+  margin-bottom: 10px;
+  color: #475569;
+  line-height: 1.6;
+}
+
+/* ===== Status Badge ===== */
+
+.status {
+  padding: 7px 14px;
+  border-radius: 999px;
   font-size: 13px;
-  font-weight: bold;
-  background-color: #e9f0ff;
-  color: #007bff;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+/* ===== Different Status Colors ===== */
+
+.status.pending {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.status.accepted {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.status.rejected {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+/* ===== Responsive ===== */
+
+@media (max-width: 768px) {
+  .myapps-header h1 {
+    font-size: 32px;
+  }
+
+  .applications-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .app-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }

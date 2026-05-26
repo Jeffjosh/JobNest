@@ -4,7 +4,7 @@ import jwt from "jsonwebtoken";
 
 export const register=async(req,res)=>{
     try{
-        const {name,email,password,role}=req.body
+        const {name,email,password,role,companyname,companywebsite}=req.body
 
         const userexists=await User.findOne({email})
 
@@ -18,7 +18,10 @@ export const register=async(req,res)=>{
             name,
             email,
             password:hashedpassword,
-            role:role || "user"
+            role:role || "user",
+            companyname:role ==="recruiter" ? companyname:"",
+            companywebsite:role ==="recruiter"? companywebsite:"",
+            isApproved:role === "recruiter" ? false:true
         })
 
         res.status(201).json({message:"user created successfully", user:{
@@ -47,6 +50,10 @@ export const login=async(req,res)=>{
 
         if(!ismatch){
             return res.status(400).json({message:"invalid email or password"})
+        }
+
+        if(user.role === "recruiter" && !user.isApproved){
+            return res.status(403).json({message:"Waiting for approval"})
         }
 
         const token=jwt.sign(

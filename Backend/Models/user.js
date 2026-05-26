@@ -14,10 +14,25 @@ const userSchema = new mongoose.Schema({
         type:String,
         required:true
     },
+    companyname:{
+        type:String
+    },
+    companywebsite:{
+        type:String
+    },
     role:{
         type:String,
         enum:["user","recruiter","admin"],
         default:"user"
+    },
+    isApproved:{
+        type:Boolean,
+        default:function(){
+            if(this.role==="user"){
+                return true
+            }
+            return false
+        }
     },
     bio:{
         type:String

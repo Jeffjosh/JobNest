@@ -44,21 +44,79 @@ function Createjobs() {
     }
 
   return (
-    <div>
-      <Navbar />
-      <div className="createjob-container">
-        <h1>Create Jobs</h1>
-        <form onSubmit={handlesubmit}>
-            <input type="text" name='title' placeholder='Title' onChange={handlechange}/>
-            <input type="text" name='company' placeholder='Company' onChange={handlechange}/>
-            <textarea name="description" placeholder='Description' onChange={handlechange}/>
-            <input type="text" name='location' placeholder='Location' onChange={handlechange}/>
-            <input type="number" name='salary' placeholder='Salary' onChange={handlechange}/>
-            <button type='submit'>Create Job</button>
-        </form>
+    <div className='createjob-page'>
+
+    <div className="createjob-container">
+
+      <div className='createjob-header'>
+        <h1>Create Job</h1>
+        <p>Post a new opportunity and attract candidates.</p>
       </div>
-      
+
+      <form onSubmit={handlesubmit}>
+
+        <div className='input-group'>
+          <label>Job Title</label>
+          <input
+            type="text"
+            name='title'
+            placeholder='Enter job title'
+            onChange={handlechange}
+          />
+        </div>
+
+        <div className='input-group'>
+          <label>Company Name</label>
+          <input
+            type="text"
+            name='company'
+            placeholder='Enter company name'
+            onChange={handlechange}
+          />
+        </div>
+
+        <div className='input-group'>
+          <label>Job Description</label>
+          <textarea
+            name="description"
+            placeholder='Describe the role and responsibilities'
+            onChange={handlechange}
+          />
+        </div>
+
+        <div className='form-row'>
+
+          <div className='input-group'>
+            <label>Location</label>
+            <input
+              type="text"
+              name='location'
+              placeholder='Enter location'
+              onChange={handlechange}
+            />
+          </div>
+
+          <div className='input-group'>
+            <label>Salary</label>
+            <input
+              type="number"
+              name='salary'
+              placeholder='Enter salary'
+              onChange={handlechange}
+            />
+          </div>
+
+        </div>
+
+        <button type='submit'>
+          Create Job
+        </button>
+
+      </form>
+
     </div>
+
+  </div>
   )
 }
 

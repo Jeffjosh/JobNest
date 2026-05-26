@@ -11,7 +11,9 @@ function Register() {
         name:"",
         email:"",
         password:"",
-        role:"user"
+        role:"user",
+        companyname:"",
+        companywebsite:""
 
     })
 
@@ -36,23 +38,99 @@ function Register() {
         }
     }
   return (
+    <div className='register-page'>
+
     <div className='register-container'>
-      <h2>Create Account</h2>
+
+      <div className='register-header'>
+        <h2>Create Account</h2>
+        <p>Join JobNest and explore new career opportunities.</p>
+      </div>
+
       <form onSubmit={handlesubmit}>
-        <input type="text" name='name' placeholder='Name' onChange={handlechange}/>
-        <input type="text" name='email' placeholder='Email' onChange={handlechange}/>
-        <input type="password" name='password' placeholder='Password' onChange={handlechange}/>
-        <select name="role" id="" onChange={handlechange}>
-            <option value="user">User</option>
+
+        <div className='input-group'>
+          <label>Full Name</label>
+          <input
+            type="text"
+            name='name'
+            placeholder='Enter your name'
+            onChange={handlechange}
+          />
+        </div>
+
+        <div className='input-group'>
+          <label>Email</label>
+          <input
+            type="text"
+            name='email'
+            placeholder='Enter your email'
+            onChange={handlechange}
+          />
+        </div>
+
+        <div className='input-group'>
+          <label>Password</label>
+          <input
+            type="password"
+            name='password'
+            placeholder='Enter your password'
+            onChange={handlechange}
+          />
+        </div>
+
+        <div className='input-group'>
+          <label>Account Type</label>
+
+          <select
+            name="role"
+            onChange={handlechange}
+          >
+            <option value="user">Job Seeker</option>
             <option value="recruiter">Recruiter</option>
-        </select>
-        <button type='submit'>Register</button>
+          </select>
+        </div>
+
+        {form.role === "recruiter" && (
+          <div className='recruiter-fields'>
+
+            <div className='input-group'>
+              <label>Company Name</label>
+              <input
+                type="text"
+                name="companyname"
+                placeholder="Enter company name"
+                onChange={handlechange}
+              />
+            </div>
+
+            <div className='input-group'>
+              <label>Company Website</label>
+              <input
+                type="text"
+                name="companywebsite"
+                placeholder="Enter company website"
+                onChange={handlechange}
+              />
+            </div>
+
+          </div>
+        )}
+
+        <button type='submit'>
+          Create Account
+        </button>
+
       </form>
-      <p>
+
+      <p className='login-link'>
         Already have an account?
-        <Link to="/login">Login</Link>
+        <Link to="/login"> Login</Link>
       </p>
+
     </div>
+
+  </div>
   )
 }
 

@@ -1,14 +1,18 @@
+import dotenv from 'dotenv';
+dotenv.config()
 import express from 'express';
 import cors from 'cors';
-import dotenv from 'dotenv';
+
 import mongoose from 'mongoose';
 import authRoutes from './Routes/userroutes.js';
 import jobroutes from './Routes/jobroutes.js';
 import applicationroutes from './Routes/applicationroutes.js';
 import path from 'path';
 import messageroutes from "./Routes/messageroutes.js"
+import adminroutes from "./Routes/adminroutes.js";
 
-dotenv.config()
+console.log(process.env.EMAIL_USER)
+console.log(process.env.EMAIL_PASS)
 
 const app = express();
 app.use(cors())
@@ -19,6 +23,7 @@ app.use("/api/jobs",jobroutes)
 app.use("/api/applications",applicationroutes)
 app.use("/uploads",express.static("uploads"))
 app.use("/api/messages",messageroutes)
+app.use("/api/admin",adminroutes)
 
 mongoose.connect(process.env.MONGODB_URL)
 .then(()=>console.log("mongoDB connected"))

@@ -48,41 +48,108 @@ function Recruiterdashboard() {
         getjobs()
     },[])
   return (
-    <div>
-        <Navbar />
-      <div className='dashboard-container'>
-        <h1>Posted Jobs</h1>
-        {
-            jobs.length===0 ?(
-                <p className='dashboard-empty'>No Jobs Posted Yet</p>
-            ):(
-                <div className='dashboard-list'>
-                    {jobs.map((job)=>(
-            <div className='dashboard-card' key={job._id}>
-                <h2>{job.title}</h2>
+   <div className='dashboard-page'>
 
-                <h3>{job.company}</h3>
-                <p>{job.description}</p>
-                <p>{job.location}</p>
-                <p>{job.salary}</p>
-                <div className='dashboard-card-actions'>
-                    <Link to={`/applications/${job._id}`} className='btn-view-apps'>
-                    View Applications
-                </Link>
-                <Link to={`/editjob/${job._id}`} className='btn-edit'>
-                    Edit Post
-                </Link>
-                <button type='button' onClick={()=>deletejob(job._id)} className='btn-delete'>Delete Post</button>
+    <div className='dashboard-container'>
+
+      <div className='dashboard-header'>
+        <div>
+          <h1>Recruiter Dashboard</h1>
+          <p>Manage all your posted jobs and applicants.</p>
+        </div>
+
+        <Link to="/createjob" className='btn-create-job'>
+          + Post New Job
+        </Link>
+      </div>
+
+      {jobs.length === 0 ? (
+
+        <div className='dashboard-empty'>
+          <h3>No Jobs Posted Yet</h3>
+          <p>
+            Start posting jobs to attract applicants.
+          </p>
+
+          <Link to="/createjob" className='btn-empty-create'>
+            Create Job
+          </Link>
+        </div>
+
+      ) : (
+
+        <div className='dashboard-list'>
+
+          {jobs.map((job) => (
+
+            <div className='dashboard-card' key={job._id}>
+
+              <div className='dashboard-card-top'>
+
+                <div>
+                  <h2>{job.title}</h2>
+                  <h3>{job.company}</h3>
                 </div>
+
+                <span className='job-badge'>
+                  Active
+                </span>
+
+              </div>
+
+              <p className='job-description'>
+                {job.description}
+              </p>
+
+              <div className='job-details'>
+
+                <p>
+                  <strong>Location:</strong> {job.location}
+                </p>
+
+                <p>
+                  <strong>Salary:</strong> {job.salary}
+                </p>
+
+              </div>
+
+              <div className='dashboard-card-actions'>
+
+                <Link
+                  to={`/applications/${job._id}`}
+                  className='btn-view-apps'
+                >
+                  View Applications
+                </Link>
+
+                <Link
+                  to={`/editjob/${job._id}`}
+                  className='btn-edit'
+                >
+                  Edit
+                </Link>
+
+                <button
+                  type='button'
+                  onClick={() => deletejob(job._id)}
+                  className='btn-delete'
+                >
+                  Delete
+                </button>
+
+              </div>
 
             </div>
-        ))}
-                </div>
-            )
-        }
-        
-      </div>
+
+          ))}
+
+        </div>
+
+      )}
+
     </div>
+
+  </div>
   )
 }
 

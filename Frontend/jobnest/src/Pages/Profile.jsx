@@ -98,93 +98,154 @@ function Profile() {
         }
     }
   return (
-    <div>
-        <Navbar/>
-      <div className='profile-container'>
-        <h1>Profile</h1>
+    <div className='profile-page'>
 
-        {
-            editing ?(
-                        <form onSubmit={handlesubmit} className='profile-form'>
-            <input 
-            type="text"
-            name="name"
-            value={form.name}
-            onChange={handlechange}
-            placeholder='Full Name' 
-            />
-            <input 
-            type="text"
-            name="email"
-            value={form.email}
-            onChange={handlechange}
-            placeholder='Email' 
-            />
-            <input 
-            type="text"
-            name="qualification"
-            value={form.qualification}
-            onChange={handlechange}
-            placeholder='Qualification' 
-            />
-            <input 
-            type="text"
-            name="experience"
-            value={form.experience}
-            onChange={handlechange}
-            placeholder='Experience' 
-            />
-            <input 
-            type="text"
-            name="skills"
-            value={form.skills}
-            onChange={handlechange}
-            placeholder='Skills' 
-            />
-            <input 
-            type="file"
-            accept='.pdf'
-            onChange={(e)=>setresume(e.target.files[0])}
-            />
-            {
-                currentresume && (
-                    <a href={`${import.meta.env.VITE_URL}${currentresume}`}
-                    target='_blank'
-                    rel='noreferrer'
-                    >
-                        View Current Resume
-                    </a>
-                )
-            }
-            <button type='submit' className='btn-update-profile'>
-                Update Profile
-            </button>
-        </form>
-            ):(
-                <div className='profile-info'>
-                    <p><span>Name:</span>{form.name}</p>
-                    <p><span>Email:</span>{form.email}</p>
-                    <p><span>Qualifications:</span>{form.qualification}</p>
-                    <p><span>Experience:</span>{form.experience}</p>
-                    <p><span>Skills:</span>{form.skills}</p>
-                    {
-                currentresume && (
-                    <a href={`${import.meta.env.VITE_URL}${currentresume}`}
-                    target='_blank'
-                    rel='noreferrer'
-                    >
-                        View Resume
-                    </a>
-                )
-            }
-                    <button onClick={()=>setediting(true)} className='btn-edit-profile'>
-                        Edit Profile
-                    </button>
-                </div>
-            )
-        }
+    <div className='profile-container'>
+
+      <div className='profile-header'>
+        <h1>My Profile</h1>
+        <p>Manage your personal details and resume.</p>
       </div>
+
+      {editing ? (
+
+        <form onSubmit={handlesubmit} className='profile-form'>
+
+          <div className='input-group'>
+            <label>Full Name</label>
+            <input
+              type="text"
+              name="name"
+              value={form.name}
+              onChange={handlechange}
+              placeholder='Full Name'
+            />
+          </div>
+
+          <div className='input-group'>
+            <label>Email</label>
+            <input
+              type="text"
+              name="email"
+              value={form.email}
+              onChange={handlechange}
+              placeholder='Email'
+            />
+          </div>
+
+          <div className='input-group'>
+            <label>Qualification</label>
+            <input
+              type="text"
+              name="qualification"
+              value={form.qualification}
+              onChange={handlechange}
+              placeholder='Qualification'
+            />
+          </div>
+
+          <div className='input-group'>
+            <label>Experience</label>
+            <input
+              type="text"
+              name="experience"
+              value={form.experience}
+              onChange={handlechange}
+              placeholder='Experience'
+            />
+          </div>
+
+          <div className='input-group'>
+            <label>Skills</label>
+            <input
+              type="text"
+              name="skills"
+              value={form.skills}
+              onChange={handlechange}
+              placeholder='Skills'
+            />
+          </div>
+
+          <div className='input-group'>
+            <label>Upload Resume</label>
+
+            <input
+              type="file"
+              accept='.pdf'
+              onChange={(e) => setresume(e.target.files[0])}
+            />
+          </div>
+
+          {currentresume && (
+            <a
+              href={`${import.meta.env.VITE_URL}${currentresume}`}
+              target='_blank'
+              rel='noreferrer'
+              className='resume-link'
+            >
+              View Current Resume
+            </a>
+          )}
+
+          <button type='submit' className='btn-update-profile'>
+            Update Profile
+          </button>
+
+        </form>
+
+      ) : (
+
+        <div className='profile-info'>
+
+          <div className='profile-card'>
+            <h2>{form.name}</h2>
+            <p>{form.email}</p>
+          </div>
+
+          <div className='profile-details'>
+
+            <div className='detail-item'>
+              <span>Qualification</span>
+              <p>{form.qualification || "Not Added"}</p>
+            </div>
+
+            <div className='detail-item'>
+              <span>Experience</span>
+              <p>{form.experience || "Not Added"}</p>
+            </div>
+
+            <div className='detail-item'>
+              <span>Skills</span>
+              <p>{form.skills || "Not Added"}</p>
+            </div>
+
+          </div>
+
+          {currentresume && (
+            <a
+              href={`${import.meta.env.VITE_URL}${currentresume}`}
+              target='_blank'
+              rel='noreferrer'
+              className='resume-link'
+            >
+              View Resume
+            </a>
+          )}
+
+          <button
+            onClick={() => setediting(true)}
+            className='btn-edit-profile'
+          >
+            Edit Profile
+          </button>
+
+        </div>
+
+      )}
+
     </div>
+
+  </div>
   )
 }
 

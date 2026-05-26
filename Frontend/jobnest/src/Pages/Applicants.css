@@ -1,152 +1,237 @@
-/* Applicants page */
-.applicants-container {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 0 20px 60px;
+/* ===== Page ===== */
+
+.applicants-page {
+  min-height: 100vh;
+  background: #f4f7fb;
 }
 
-.applicants-container h1 {
-  font-size: 24px;
-  margin-bottom: 20px;
-  color: #222;
+/* ===== Container ===== */
+
+.applicants-container {
+  width: 90%;
+  max-width: 1300px;
+  margin: auto;
+  padding: 40px 0;
 }
+
+/* ===== Header ===== */
+
+.applicants-header {
+  margin-bottom: 35px;
+}
+
+.applicants-header h1 {
+  margin: 0;
+  font-size: 40px;
+  color: #0f172a;
+}
+
+.applicants-header p {
+  margin-top: 10px;
+  color: #64748b;
+}
+
+/* ===== Empty ===== */
 
 .applicants-empty {
-  color: #888;
-  font-size: 15px;
+  background: white;
+  padding: 50px 30px;
+  border-radius: 22px;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.05);
 }
 
-/* Search & filter bar */
+.applicants-empty h3 {
+  margin-bottom: 10px;
+  color: #0f172a;
+}
+
+.applicants-empty p {
+  color: #64748b;
+}
+
+/* ===== Filters ===== */
+
 .applicants-filters {
   display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
-  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 30px;
 }
 
 .applicants-filters input,
 .applicants-filters select {
-  padding: 9px 12px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 14px;
+  padding: 14px 16px;
+  border: 1px solid #dbe1e8;
+  border-radius: 12px;
   outline: none;
-  background-color: #fff;
+  font-size: 15px;
+  background: white;
+  transition: 0.3s;
 }
 
 .applicants-filters input {
   flex: 1;
-  min-width: 180px;
 }
 
 .applicants-filters input:focus,
 .applicants-filters select:focus {
-  border-color: #007bff;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
 }
 
-/* Cards list */
+/* ===== Grid ===== */
+
 .applicants-list {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 25px;
 }
+
+/* ===== Card ===== */
 
 .applicant-card {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 22px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  background: white;
+  padding: 25px;
+  border-radius: 22px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.05);
+  transition: 0.3s;
 }
 
-.applicant-card h2 {
-  font-size: 18px;
-  color: #222;
-  margin-bottom: 2px;
+.applicant-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 35px rgba(15, 23, 42, 0.08);
 }
 
-.applicant-card h3 {
+/* ===== Top ===== */
+
+.applicant-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.applicant-top h2 {
+  margin: 0;
+  color: #0f172a;
+  font-size: 24px;
+}
+
+.applicant-top h3 {
+  margin-top: 8px;
+  font-size: 15px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* ===== Status ===== */
+
+.status {
+  padding: 8px 14px;
+  border-radius: 999px;
   font-size: 13px;
-  color: #888;
-  font-weight: normal;
-  margin-bottom: 12px;
-}
-
-.applicant-card p {
-  font-size: 14px;
-  color: #555;
-  margin-bottom: 6px;
-}
-
-.applicant-card p span {
   font-weight: 600;
-  color: #333;
-  margin-right: 4px;
-}
-
-/* Status badge */
-.app-status-badge {
-  display: inline-block;
-  padding: 3px 10px;
-  border-radius: 20px;
-  font-size: 12px;
-  font-weight: 600;
-  margin-bottom: 10px;
   text-transform: capitalize;
 }
 
-.status-applied    { background-color: #e9f0ff; color: #007bff; }
-.status-shortlisted{ background-color: #e6f9ee; color: #28a745; }
-.status-rejected   { background-color: #fdecea; color: #dc3545; }
-
-/* Resume link */
-.applicant-card a {
-  display: inline-block;
-  font-size: 13px;
-  color: #007bff;
-  text-decoration: none;
-  margin-bottom: 12px;
+.status.applied {
+  background: #dbeafe;
+  color: #1d4ed8;
 }
 
-.applicant-card a:hover {
+.status.shortlisted {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.status.rejected {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+/* ===== Details ===== */
+
+.applicant-details {
+  margin-top: 25px;
+}
+
+.applicant-details p {
+  margin-bottom: 12px;
+  color: #475569;
+  line-height: 1.6;
+}
+
+/* ===== Resume Button ===== */
+
+.resume-btn {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.resume-btn:hover {
   text-decoration: underline;
 }
 
-/* Action buttons */
+/* ===== Actions ===== */
+
 .applicant-actions {
   display: flex;
-  gap: 10px;
-  margin-top: 4px;
+  gap: 15px;
+  margin-top: 25px;
 }
 
-.btn-shortlist {
-  padding: 7px 16px;
-  background-color: #28a745;
-  color: #fff;
+.applicant-actions button {
+  flex: 1;
+  padding: 13px;
   border: none;
-  border-radius: 5px;
-  font-size: 13px;
+  border-radius: 12px;
+  color: white;
+  font-size: 14px;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: 0.3s;
+}
+
+/* ===== Buttons ===== */
+
+.btn-shortlist {
+  background: #16a34a;
 }
 
 .btn-shortlist:hover {
-  background-color: #1e7e34;
+  background: #15803d;
 }
 
 .btn-reject {
-  padding: 7px 16px;
-  background-color: #dc3545;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  font-size: 13px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.2s;
+  background: #dc2626;
 }
 
 .btn-reject:hover {
-  background-color: #a71d2a;
+  background: #b91c1c;
+}
+
+/* ===== Responsive ===== */
+
+@media (max-width: 768px) {
+
+  .applicants-header h1 {
+    font-size: 32px;
+  }
+
+  .applicants-filters {
+    flex-direction: column;
+  }
+
+  .applicants-list {
+    grid-template-columns: 1fr;
+  }
+
+  .applicant-top {
+    flex-direction: column;
+  }
+
 }

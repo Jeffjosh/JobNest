@@ -12,15 +12,19 @@ import Editjob from './Pages/Editjob';
 import Protectroute from './Components/Protectroute';
 import Profile from './Pages/Profile';
 import Message from './Pages/Message';
+import Admin from './Pages/Admin';
+import Footer from './Components/Footer';
+import Navbar from './Components/Navbar';
 
 function App() {
   return (
   <Router>
+    <Navbar/>
     <Routes>
-    <Route path='/' element={<Protectroute ><Home/></Protectroute>}/>
+    <Route path='/' element={<Home/>}/>
     <Route path='/login' element={<Login/>}/>
     <Route path='/register' element={<Register/>}/>
-    <Route path='/jobs/:id' element={<Protectroute role="user" ><Jobdetail/></Protectroute>}/>
+    <Route path='/jobs/:id' element={<Jobdetail/>}/>
     <Route path='/myapplications' element={<Protectroute role="user" ><Myapplications/></Protectroute>}/>
     <Route path='/createjob' element={<Protectroute role="recruiter" ><Createjobs/></Protectroute>}/>
     <Route path='/recruiterdashboard' element={<Protectroute role="recruiter" ><Recruiterdashboard/></Protectroute>}/>
@@ -28,8 +32,11 @@ function App() {
     <Route path='/editjob/:id' element={<Protectroute role="recruiter" ><Editjob/></Protectroute>}/>
     <Route path='/profile' element={<Protectroute role="user" ><Profile/></Protectroute>}/>
     <Route path='/messages/:id' element={<Message/>}/>
+    <Route path='/admin' element={<Admin/>}/>
     </Routes>
+    <Footer/>
   </Router>
+
   )
 }
 

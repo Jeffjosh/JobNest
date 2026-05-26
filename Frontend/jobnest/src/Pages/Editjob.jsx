@@ -56,24 +56,101 @@ function Editjob() {
     },[])
 
   return (
-    <div>
-      <div className='editjob-container'>
+    <div className='editjob-page'>
+
+    <div className='editjob-container'>
+
+      <div className='editjob-header'>
         <h1>Edit Job</h1>
-        <form onSubmit={handlesubmit}>
-            <input type="text" name='title' value={form.title} onChange={handlechange} placeholder='Title'/>
-            <input type="text" name='company' value={form.company} onChange={handlechange} placeholder='Company'/>
-            <textarea name="description" value={form.description} onChange={handlechange} placeholder='Description'/>
-            <input type="text" name='location' value={form.location} onChange={handlechange} placeholder='Location'/>
-            <input type="number" name='salary' value={form.salary} onChange={handlechange} placeholder='Salary'/>
-            <div className='editjob-form-actions'>
-                <button type='submit' className='btn-update'>Update Job</button>
-            <button type='button' onClick={()=>navigate("/recruiterdashboard")} className='btn-cancel'>
-                Cancel
-            </button>
-            </div>
-        </form>
+        <p>Update job details and requirements.</p>
       </div>
+
+      <form onSubmit={handlesubmit}>
+
+        <div className='input-group'>
+          <label>Job Title</label>
+
+          <input
+            type="text"
+            name='title'
+            value={form.title}
+            onChange={handlechange}
+            placeholder='Enter job title'
+          />
+        </div>
+
+        <div className='input-group'>
+          <label>Company Name</label>
+
+          <input
+            type="text"
+            name='company'
+            value={form.company}
+            onChange={handlechange}
+            placeholder='Enter company name'
+          />
+        </div>
+
+        <div className='input-group'>
+          <label>Job Description</label>
+
+          <textarea
+            name="description"
+            value={form.description}
+            onChange={handlechange}
+            placeholder='Describe the role'
+          />
+        </div>
+
+        <div className='form-row'>
+
+          <div className='input-group'>
+            <label>Location</label>
+
+            <input
+              type="text"
+              name='location'
+              value={form.location}
+              onChange={handlechange}
+              placeholder='Enter location'
+            />
+          </div>
+
+          <div className='input-group'>
+            <label>Salary</label>
+
+            <input
+              type="number"
+              name='salary'
+              value={form.salary}
+              onChange={handlechange}
+              placeholder='Enter salary'
+            />
+          </div>
+
+        </div>
+
+        <div className='editjob-form-actions'>
+
+          <button type='submit' className='btn-update'>
+            Update Job
+          </button>
+
+          <button
+            type='button'
+            onClick={() => navigate("/recruiterdashboard")}
+            className='btn-cancel'
+          >
+            Cancel
+          </button>
+
+        </div>
+
+      </form>
+
     </div>
+
+  </div>
   )
 }
 
